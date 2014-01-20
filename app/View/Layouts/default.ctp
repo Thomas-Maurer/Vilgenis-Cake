@@ -44,17 +44,18 @@ $cakeDescription = __d('cake_dev', 'Vilgenis site web');
 <body>
 	<div class="container contenuWhite">
 		<?php echo $this->element('Header'); ?>
-		<?php echo $this->element('carousel', array("variable_name" => "current")); ?>
+		<?php echo $this->element('carousel'); ?>
 		<div class="contenuWhite">
-			<?php echo $this->element('menu-gauche', array("variable_name" => "current")); ?>
+			<?php echo $this->element('menu-gauche'); ?>
 			<?php echo $this->Session->flash(); ?>
 			<div class="Contenu">
-				<?php echo $this->element('article-gauche', array("variable_name" => "current")); ?>
-				<?php echo $this->element('article-droite', array("variable_name" => "current")); ?>
+			<?php echo $this->fetch('content'); ?>
+				
+				<?php echo $this->element('article-droite'); ?>
 			</div>
 		</div>
 		<?php echo $this->element('sql_dump'); ?>
-		<?php echo $this->element('footer', array("variable_name" => "current")); ?>
+		<?php echo $this->element('footer'); ?>
 	</div>
 	
 	

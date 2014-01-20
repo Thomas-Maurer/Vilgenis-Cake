@@ -1,12 +1,8 @@
 
+<?php $titre = $articles['article']['TITRE_ARTICLE'] ?>
+<?php $contenuArticle = $articles['article']['CONTENU_ARTICLE'];?>
 
-
-
-    <!-- C'est ici que nous bouclons sur le tableau $posts afin d'afficher les informations des Articles -->
-
-    <?php foreach ($articles as $article): ?>
-
-            <?php echo $article['article']['TITRE_ARTICLE'] ?>
-		<?php echo $article['article']['CONTENU_ARTICLE'];?>
-
-    <?php endforeach; ?>
+	<?php echo $this->element('article-gauche',array(
+    "titre" => $titre,
+	"contenuArticle" => $contenuArticle
+)); ?>
