@@ -1,9 +1,19 @@
+<?php echo $this->Html->script('../tinymce/tinymce.min.js');?>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea"
+ });
+</script>
+
 <div class="col-xs-9 col-md-8 col-lg-7  panel Article center">
         		<div class="panel"style="background:none">
                 	<h5> Création d'articles </h5>
                 </div>
                 <div class="panel" style="background:none">
                 	<p>
+					<form method="post">
+    <textarea></textarea>
+</form>
 <?php
 echo $this->Form->input('txt', array('type' => 'text','label' => 'Titre de l article:  '));
 ?>
@@ -61,3 +71,5 @@ echo $this->Html->link(
 </p>
                 </div>
             </div>
+			
+			
