@@ -2,7 +2,7 @@
 <script type="text/javascript">
 tinymce.init({
 	language : 'fr_FR',
-	toolbar: "undo redo | styleselect | bold italic underline | link image",
+	toolbar: "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     selector: "textarea",
  });
 </script>
