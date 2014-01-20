@@ -1,7 +1,9 @@
 <?php echo $this->Html->script('../tinymce/tinymce.min.js');?>
 <script type="text/javascript">
 tinymce.init({
-    selector: "textarea"
+	language : 'fr_FR',
+	toolbar: "undo redo | styleselect | bold italic underline | link image",
+    selector: "textarea",
  });
 </script>
 
@@ -11,19 +13,14 @@ tinymce.init({
                 </div>
                 <div class="panel" style="background:none">
                 	<p>
-					<form method="post">
-    <textarea></textarea>
-</form>
 <?php
 echo $this->Form->input('txt', array('type' => 'text','label' => 'Titre de l article:  '));
 ?>
 </p>
-
-<p>
-<?php
-echo "-> Plugin html <-";
-?>
-</p>
+<form method="post" style="width:100%">
+    <textarea></textarea>
+</form>
+</br>
 
 <p>
 <?php
