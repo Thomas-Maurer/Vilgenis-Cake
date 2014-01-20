@@ -16,7 +16,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Vilgenis site web');
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,8 +28,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('vilgenis');
+		
+		echo $this->Html->script('http://code.jquery.com/jquery-1.9.1.js');
+		echo $this->Html->script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+		echo $this->Html->script('http://code.jquery.com/ui/1.10.3/jquery-ui.js');
+		echo $this->Html->script('bootstrap.min.js');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -37,25 +42,18 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
-
+	<div class="container contenuWhite">
+		<?php echo $this->element('Header', array("variable_name" => "current")); ?>
+		<?php echo $this->element('carousel', array("variable_name" => "current")); ?>
+		<div class="contenuWhite">
+			<?php echo $this->element('menu-gauche', array("variable_name" => "current")); ?>
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
+			
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+	<?php echo $this->element('footer', array("variable_name" => "current")); ?>
 </body>
 </html>

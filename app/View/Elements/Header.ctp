@@ -1,6 +1,3 @@
-<?php echo $this->Html->css('bootstrap.min.css');?>
-<?php echo $this->Html->css('vilgenis.css');?>
-
 <?php
 echo $this->Html->div('Header');echo $this->Html->div('row');echo $this->Html->div('headerImage');echo $this->Html->div('panel pull-right ');echo $this->Html->div('loginMenu loginbox');
 echo $this->Html->div('Header');
