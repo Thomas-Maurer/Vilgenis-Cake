@@ -6,3 +6,4 @@
     "titre" => $titre,
 	"contenuArticle" => $contenuArticle
 )); ?>
+<?php echo $this->element('article-droite'); ?>

@@ -5,5 +5,8 @@ class Articlescontroller extends AppController {
 	function index() {
         $this->set('articles', $this->article->find('first',array('order'=>'ID_ARTICLE DESC')));
     }
+	
+	public function creation_article() {
+		}
 }
 ?>

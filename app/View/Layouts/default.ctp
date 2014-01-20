@@ -51,7 +51,7 @@ $cakeDescription = __d('cake_dev', 'Vilgenis site web');
 			<div class="Contenu">
 			<?php echo $this->fetch('content'); ?>
 				
-				<?php echo $this->element('article-droite'); ?>
+				
 			</div>
 		</div>
 		<?php echo $this->element('sql_dump'); ?>
