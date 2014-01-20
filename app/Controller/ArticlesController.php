@@ -1,9 +1,9 @@
 <?php
 class Articlescontroller extends AppController {
-    var $name = 'Articles';
+    var $name = 'articles';
 	
 	function index() {
-        $this->set('Article', $this->Article->find('all'));
+        $this->set('articles', $this->article->find('all'));
     }
 }
 ?>
