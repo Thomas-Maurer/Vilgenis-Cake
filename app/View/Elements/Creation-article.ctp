@@ -17,8 +17,9 @@ tinymce.init({
 echo $this->Form->input('txt', array('type' => 'text','label' => 'Titre de l article:  '));
 ?>
 </p>
-<form method="post" style="width:100%">
+<form method="post" style="width:100%" action="">
     <textarea></textarea>
+	<div><a class="btn btn-default" id="submitbtn" href="#"><span>Envoyer</span></a></div>
 </form>
 </br>
 
