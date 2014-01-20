@@ -1,6 +1,9 @@
 <?php
-echo $this->Html->div('Header');echo $this->Html->div('row');echo $this->Html->div('headerImage');echo $this->Html->div('panel pull-right ');echo $this->Html->div('loginMenu loginbox');
 echo $this->Html->div('Header');
+echo $this->Html->div('row');
+echo $this->Html->div('headerImage');
+echo $this->Html->div('panel pull-right');
+echo $this->Html->div('loginMenu loginbox');
 ?>
 <form class="form-inline" role="form">
                       <div class="form-group">
@@ -13,4 +16,10 @@ echo $this->Html->div('Header');
                       </div>
                       <button type="submit" class="btn btn-default">Connexion</button>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!--Fin Header-->
+

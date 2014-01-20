@@ -19,7 +19,7 @@
 $cakeDescription = __d('cake_dev', 'Vilgenis site web');
 ?>
 <!DOCTYPE html>
-<html>
+<html class="Fond">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
@@ -43,17 +43,20 @@ $cakeDescription = __d('cake_dev', 'Vilgenis site web');
 </head>
 <body>
 	<div class="container contenuWhite">
-		<?php echo $this->element('Header', array("variable_name" => "current")); ?>
+		<?php echo $this->element('Header'); ?>
 		<?php echo $this->element('carousel', array("variable_name" => "current")); ?>
 		<div class="contenuWhite">
 			<?php echo $this->element('menu-gauche', array("variable_name" => "current")); ?>
 			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
+			<div class="Contenu">
+				<?php echo $this->element('article-gauche', array("variable_name" => "current")); ?>
+				<?php echo $this->element('article-droite', array("variable_name" => "current")); ?>
+			</div>
 		</div>
-			
+		<?php echo $this->element('sql_dump'); ?>
+		<?php echo $this->element('footer', array("variable_name" => "current")); ?>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
-	<?php echo $this->element('footer', array("variable_name" => "current")); ?>
+	
+	
 </body>
 </html>
