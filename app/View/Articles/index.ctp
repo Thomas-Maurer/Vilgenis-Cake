@@ -1,7 +1,5 @@
 
-<?php echo $this->Html->css('vilgenis','bootstrap.min.css');?>
-<?php echo $this->element('Header', array("variable_name" => "current")); ?>
-<?php echo $this->element('carousel', array("variable_name" => "current")); ?>
+
 <h1>Les Articles du site</h1>
 <table>
     <tr>
@@ -26,4 +24,3 @@
 
 </table>
 
-<?php echo $this->element('footer', array("variable_name" => "current")); ?>

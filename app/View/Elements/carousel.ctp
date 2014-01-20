@@ -32,4 +32,6 @@
 			</div>
 		</div>
 </div>
+</div>
+</div>
 <!--Fin Carousel Droite-->
