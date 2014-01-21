@@ -3,8 +3,10 @@ class Rubriquescontroller extends AppController {
     var $name = 'rubriques';
 	
 	function index() {
-        $this->set('rubriques', $this->rubrique->find('all',array('order'=>'id  DESC')));
-		$this->set('sous_rubriques',$this->sous_rubriques->query("SELECT * FROM rubrique WHERE ID_RUBRIQUE_PARENT != NULL;"));
-		$this->set('rubriques_parent',$this->rubriques_parent->query("SELECT * FROM rubrique WHERE ID_RUBRIQUE_PARENT = NULL;"));
+	     $this->set('articles', $this->rubrique->article->find('first',array('order'=>'id DESC')));
+		$this->set('lastarticles', $this->rubrique->article->find('all',array('order'=>'id DESC Limit 5')));
+       $this->set('rubriques_parents', $this->rubrique->find('all',array('conditions' =>array('rubrique.ID_RUBRIQUE_PARENT IS NULL'))));
+		$this->set('rubriques_filles', $this->rubrique->find('all',array('conditions' =>array('rubrique.ID_RUBRIQUE_PARENT IS NOT NULL'))));
+
     }
 }
