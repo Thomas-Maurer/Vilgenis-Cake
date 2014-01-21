@@ -38,27 +38,23 @@ echo $this->Form->input('Visibilite', array(
 
 <p>
 <?php 
-$listeRubriques = array();
+$listeRubriquesParents = array();
 foreach($rubriques_parents as $rub){
-	$listeRubriques[] = $rub['rubrique']['NOM_RUBRIQUE'];
+	$listeRubriquesParents[] = $rub['rubrique']['NOM_RUBRIQUE'];
 }
 /*foreach($lastarticles as $articles){
 	$listeRubriques[] = $articles['article']['TITRE_ARTICLE'];
 }*/
 
-echo $this->Form->input('rubrique', array('label' => 'Rubrique:  ','options' => $listeRubriques/*array(
-	'Value 1'=>'rubrique 1',
-    'Value 2'=>'rubrique 2',
-    'Value 3'=>'rubrique 3'
- )*/)); ?>
+echo $this->Form->input('rubrique', array('label' => 'Rubrique:  ','options' => $listeRubriquesParents)); ?>
  </p>
  
  <p>
-<?php echo $this->Form->input('sous_rubrique', array('label' => 'Sous-rubrique:  ','options' => array(
-    'Value 1'=>'sous_rubrique 1',
-    'Value 2'=>'sous_rubrique 2',
-    'Value 3'=>'sous_rubrique 3'
- ))); ?>
+ <?php $listeRubriquesFilles = array();
+foreach($rubriques_filles as $rub){
+	$listeRubriquesFilles[] = $rub['rubrique']['NOM_RUBRIQUE'];}
+	?>
+<?php echo $this->Form->input('sous_rubrique', array('label' => 'Sous-rubrique:  ','options' => $listeRubriquesFilles)); ?>
  </p>
 
  <p>
