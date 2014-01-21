@@ -12,7 +12,8 @@ class Articlescontroller extends AppController {
     }
 	
 	public function creation_article() {
-	
+			$AllRubriques =  $this->article->rubrique->find('all');
+			$this->set('rubriques', $AllRubriques);
 		}
 }
 ?>
