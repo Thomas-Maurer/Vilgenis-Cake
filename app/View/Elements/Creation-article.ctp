@@ -39,7 +39,7 @@ echo $this->Form->input('Visibilite', array(
 <p>
 <?php 
 $listeRubriques = array();
-foreach($rubriques as $rub){
+foreach($rubriques_parents as $rub){
 	$listeRubriques[] = $rub['rubrique']['NOM_RUBRIQUE'];
 }
 /*foreach($lastarticles as $articles){

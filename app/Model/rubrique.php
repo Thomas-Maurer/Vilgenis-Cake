@@ -13,18 +13,18 @@ class Rubrique extends AppModel
         ));
 		
 		public $belongsTo = array(
-        'Parent' => array(
+        'RubriquesParent' => array(
             'className' => 'rubrique',
             'foreignKey' => 'ID_RUBRIQUE_PARENT',
-			'conditions' =>array('Parent.ID_RUBRIQUE_PARENT'=>0)
+			'conditions' =>array('RubriquesParent.ID_RUBRIQUE_PARENT'=>'NULL')
         )
     );
  
     public $hasMany = array(
-        'Children' => array(
+        'RubriquesChildren' => array(
             'className' => 'rubrique',
             'foreignKey' => 'ID_RUBRIQUE_PARENT',
-			'conditions' =>array('Children.ID_RUBRIQUE_PARENT'=>1)
+			'conditions' =>array('RubriquesChildren.ID_RUBRIQUE_PARENT'=>1)
         )
     );
 		
