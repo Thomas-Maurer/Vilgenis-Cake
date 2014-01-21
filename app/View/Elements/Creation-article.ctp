@@ -58,14 +58,15 @@ foreach($rubriques_filles as $rub){
  </p>
 
  <p>
-<form method="post" style="width:100%" action="">
-    <textarea></textarea>
-	<div><a class="btn btn-default" id="submitbtn" href="#"><span>Envoyer</span></a></div>
+<form method="post" style="width:100%" action="#">
+    <textarea name="content" id="contenuArticle"></textarea>
+	<input type = "submit" class="btn btn-default">
 </form>
 </br>
  </p>
  
 <p>
+<?php if (isset($_POST['content'])) echo $_POST['content']?>
 <?php
 /*echo $this->Html->link(
     'Enter',
@@ -76,5 +77,17 @@ foreach($rubriques_filles as $rub){
 </p>
 </div>
 </div>
-			
+
+<script>
+$(document).ready(function()
+{
+  $('form').submit(function()
+  {
+		<?php echo  $_POST['content']?>
+		
+		
+  });
+});
+
+</script>
 			
