@@ -15,7 +15,8 @@ class Rubrique extends AppModel
 		public $belongsTo = array(
         'Parent' => array(
             'className' => 'rubrique',
-            'foreignKey' => 'ID_RUBRIQUE_PARENT'
+            'foreignKey' => 'ID_RUBRIQUE_PARENT',
+			'conditions' =>array('Parent.ID_RUBRIQUE_PARENT'=>0)
         )
     );
  
@@ -23,6 +24,7 @@ class Rubrique extends AppModel
         'Children' => array(
             'className' => 'rubrique',
             'foreignKey' => 'ID_RUBRIQUE_PARENT',
+			'conditions' =>array('Children.ID_RUBRIQUE_PARENT'=>1)
         )
     );
 		

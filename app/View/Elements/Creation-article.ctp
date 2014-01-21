@@ -1,4 +1,4 @@
-<?php echo $this->Html->script('../tinymce/tinymce.min.js');?>
+﻿<?php echo $this->Html->script('../tinymce/tinymce.min.js');?>
 <script type="text/javascript">
 tinymce.init({
 	language : 'fr_FR',
@@ -16,12 +16,6 @@ tinymce.init({
 <?php
 echo $this->Form->input('txt', array('type' => 'text','label' => 'Titre de l article:  '));
 ?>
-</p>
-<form method="post" style="width:100%" action="">
-    <textarea></textarea>
-	<div><a class="btn btn-default" id="submitbtn" href="#"><span>Envoyer</span></a></div>
-</form>
-</br>
 
 <p>
 <?php
@@ -43,11 +37,20 @@ echo $this->Form->input('Visibilite', array(
 </p>
 
 <p>
-<?php echo $this->Form->input('rubrique', array('label' => 'Rubrique:  ','options' => array(
-    'Value 1'=>'rubrique 1',
+<?php 
+$listeRubriques = array();
+foreach($rubriques as $rub){
+	$listeRubriques[] = $rub['rubrique']['NOM_RUBRIQUE'];
+}
+/*foreach($lastarticles as $articles){
+	$listeRubriques[] = $articles['article']['TITRE_ARTICLE'];
+}*/
+
+echo $this->Form->input('rubrique', array('label' => 'Rubrique:  ','options' => $listeRubriques/*array(
+	'Value 1'=>'rubrique 1',
     'Value 2'=>'rubrique 2',
     'Value 3'=>'rubrique 3'
- ))); ?>
+ )*/)); ?>
  </p>
  
  <p>
@@ -58,16 +61,24 @@ echo $this->Form->input('Visibilite', array(
  ))); ?>
  </p>
 
+ <p>
+<form method="post" style="width:100%" action="">
+    <textarea></textarea>
+	<div><a class="btn btn-default" id="submitbtn" href="#"><span>Envoyer</span></a></div>
+</form>
+</br>
+ </p>
+ 
 <p>
 <?php
-echo $this->Html->link(
+/*echo $this->Html->link(
     'Enter',
     '/pages/home',
     array('class' => 'button', 'target' => '_blank')
-);
+);*/
 ?>
 </p>
-                </div>
-            </div>
+</div>
+</div>
 			
 			
