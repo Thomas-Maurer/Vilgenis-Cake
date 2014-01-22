@@ -3,9 +3,11 @@
                 	<h5> Liste anciens articles : <small>Phrase d'accroche</small></h5>
                 </div>
                 <div class="panel" style="background:none">
-					<?php foreach($lastarticles as $article)
-						 
-						 echo "<a>",$article['article']['TITRE_ARTICLE'],"</></br>" ;
+					<?php foreach($lastarticles as $article){
+						$titre = $article['article']['TITRE_ARTICLE'];
+						 echo $this->Html->link( $titre ,array('controller' => 'articles','action' => "display/$titre", 'full_base' => true));
+						 echo'</br>';
+						 };
 						 
 					?>
 					
