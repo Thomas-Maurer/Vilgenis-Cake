@@ -3,11 +3,11 @@
                 	<h5> Liste anciens articles : <small>Phrase d'accroche</small></h5>
                 </div>
                 <div class="panel" style="background:none">
-                	<p><a>
 					<?php foreach($lastarticles as $article)
-						 echo $article['article']['TITRE_ARTICLE'] 
+						 
+						 echo "<a>",$article['article']['TITRE_ARTICLE'],"</></br>" ;
+						 
 					?>
-					 
-					</></p>
+					
                 </div>
             </div>

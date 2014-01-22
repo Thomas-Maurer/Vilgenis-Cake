@@ -13,14 +13,15 @@ tinymce.init({
                 </div>
                 <div class="panel" style="background:none">
                 	<p>
+<?php echo $this->Form->create('article',array('action' => 'add')); ?>
 <?php
-echo $this->Form->input('txt', array('type' => 'text','label' => 'Titre de l article:  '));
+echo $this->Form->input('article.TITRE_ARTICLE', array('type' => 'txt','label' => 'Titre de l\'article:  '));
 ?>
 
-<p>
+
 <?php
 echo "<b>Visible: </b>";
-echo $this->Form->input('Visibilite', array(
+echo $this->Form->input('article.VISIBLE_ARTICLE', array(
      'div' => false,
      'label' => true,
      'type' => 'radio',
@@ -28,66 +29,28 @@ echo $this->Form->input('Visibilite', array(
      'options' => array(1 => 'Oui    ', 2 => 'Non')
 ));
   ?>
-</p>
 
-<p>
-<?php
-/*echo $this->Form->input('titre', array('type' => 'text');*/
-?>
-</p>
-
-<p>
 <?php 
 $listeRubriquesParents = array();
 foreach($rubriques_parents as $rub){
 	$listeRubriquesParents[] = $rub['rubrique']['NOM_RUBRIQUE'];
 }
-/*foreach($lastarticles as $articles){
-	$listeRubriques[] = $articles['article']['TITRE_ARTICLE'];
-}*/
 
-echo $this->Form->input('rubrique', array('label' => 'Rubrique:  ','options' => $listeRubriquesParents)); ?>
- </p>
- 
- <p>
+
+echo $this->Form->input('contient.ID_RUBRIQUE', array('label' => 'Rubrique:  ','options' => $listeRubriquesParents)); ?>
+
  <?php $listeRubriquesFilles = array();
 foreach($rubriques_filles as $rub){
 	$listeRubriquesFilles[] = $rub['rubrique']['NOM_RUBRIQUE'];}
 	?>
 <?php echo $this->Form->input('sous_rubrique', array('label' => 'Sous-rubrique:  ','options' => $listeRubriquesFilles)); ?>
- </p>
 
- <p>
-<form method="post" style="width:100%" action="#">
-    <textarea name="content" id="contenuArticle"></textarea>
-	<input type = "submit" class="btn btn-default">
-</form>
-</br>
- </p>
- 
-<p>
-<?php if (isset($_POST['content'])) echo $_POST['content']?>
-<?php
-/*echo $this->Html->link(
-    'Enter',
-    '/pages/home',
-    array('class' => 'button', 'target' => '_blank')
-);*/
-?>
-</p>
+ <?php echo $this->Form->textarea('article.CONTENU_ARTICLE');?>
+
+<?php echo $this->Form->end(array('class' => 'btn btn-default', 'label' => 'Envoyer')); ?>
+
 </div>
 </div>
 
-<script>
-$(document).ready(function()
-{
-  $('form').submit(function()
-  {
-		<?php echo  $_POST['content']?>
-		
-		
-  });
-});
 
-</script>
 			
