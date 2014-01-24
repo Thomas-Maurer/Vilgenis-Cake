@@ -32,17 +32,17 @@ echo $this->Form->input('article.VISIBLE_ARTICLE', array(
   ?>
 
 <?php 
+
 $listeRubriquesParents = array();
 foreach($rubriques_parents as $rub){
-	$listeRubriquesParents[] = $rub['rubrique']['NOM_RUBRIQUE'];
+	$listeRubriquesParents[$rub['rubrique']['id']] =  $rub['rubrique']['NOM_RUBRIQUE'];
 }
-
 
 echo $this->Form->input('contient.ID_RUBRIQUE', array('label' => 'Rubrique:  ','options' => $listeRubriquesParents)); ?>
 
  <?php $listeRubriquesFilles = array();
 foreach($rubriques_filles as $rub){
-	$listeRubriquesFilles[] = $rub['rubrique']['NOM_RUBRIQUE'];}
+	$listeRubriquesFilles[$rub['rubrique']['id']] = $rub['rubrique']['NOM_RUBRIQUE'];}
 	?>
 <?php echo $this->Form->input('contient.Sousrubrique', array('label' => 'Sous-rubrique:  ','options' => $listeRubriquesFilles)); ?>
 
