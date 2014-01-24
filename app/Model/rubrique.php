@@ -7,7 +7,7 @@ class Rubrique extends AppModel
     'article' =>
         array(
             'className'              => 'article',
-            'joinTable'              => 'contient',
+            'joinTable'              => 'contients',
             'foreignKey'             => 'ID_RUBRIQUE',
             'associationForeignKey'  => 'ID_ARTICLE',
         ));
@@ -25,7 +25,8 @@ class Rubrique extends AppModel
             'className' => 'rubrique',
             'foreignKey' => 'ID_RUBRIQUE_PARENT',
 			'conditions' =>array('RubriquesChildren.ID_RUBRIQUE_PARENT'=>1)
-        )
+        ),
+		'contient' => array('foreignKey' => 'ID_RUBRIQUE')
     );
 		
 	public function getAllRubriques()

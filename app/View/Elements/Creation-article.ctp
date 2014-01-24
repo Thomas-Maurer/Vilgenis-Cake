@@ -44,7 +44,7 @@ echo $this->Form->input('contient.ID_RUBRIQUE', array('label' => 'Rubrique:  '
 foreach($rubriques_filles as $rub){
 	$listeRubriquesFilles[] = $rub['rubrique']['NOM_RUBRIQUE'];}
 	?>
-<?php echo $this->Form->input('sous_rubrique', array('label' => 'Sous-rubrique:  ','options' => $listeRubriquesFilles)); ?>
+<?php echo $this->Form->input('contient.Sousrubrique', array('label' => 'Sous-rubrique:  ','options' => $listeRubriquesFilles)); ?>
 
  <?php echo $this->Form->textarea('article.CONTENU_ARTICLE');?>
 

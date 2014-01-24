@@ -7,10 +7,11 @@ class Article extends AppModel
     'rubrique' =>
         array(
             'className'              => 'rubrique',
-            'joinTable'              => 'contient',
+            'joinTable'              => 'contients',
             'foreignKey'             => 'ID_ARTICLE',
             'associationForeignKey'  => 'ID_RUBRIQUE',
         ));
+		var $hasMany = array('contient' => array('foreignKey' => 'ID_ARTICLE'));
 }
 
 ?>
