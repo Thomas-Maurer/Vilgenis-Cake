@@ -2,6 +2,7 @@
 <script type="text/javascript">
 tinymce.init({
 	language : 'fr_FR',
+	plugins: ["advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen"],
 	toolbar: "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     selector: "textarea",
  });
