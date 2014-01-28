@@ -27,7 +27,7 @@ echo $this->Form->input('article.VISIBLE_ARTICLE', array(
      'label' => true,
      'type' => 'radio',
 	  'legend' => false,
-     'options' => array(1 => 'Oui    ', 2 => 'Non')
+     'options' => array(1 => 'Oui    ', 0 => 'Non')
 ));
   ?>
 
