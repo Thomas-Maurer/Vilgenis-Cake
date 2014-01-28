@@ -54,7 +54,7 @@ $cakeDescription = __d('cake_dev', 'Vilgenis site web');
 				
 			</div>
 		</div>
-		<?php echo $this->element('sql_dump'); ?>
+		<?php //echo $this->element('sql_dump'); ?>
 		<?php echo $this->element('footer'); ?>
 	</div>
 	

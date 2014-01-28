@@ -12,22 +12,19 @@
 			<div class="item active">
              <?php echo $this->Html->image('vilgenis1.png');?>
 				<div class="carousel-caption">
-					<h4>First label</h4>
-					<p>A working Bootstrap carousel example.</p>
+					
 				</div>
 			</div>
 			<div class="item">
               <?php echo $this->Html->image('vilgenis2.png');?>
 				<div class="carousel-caption">
-					<h4>Second label</h4>
-					<p>This is the second slide text.</p>
+					
 				</div>
 			</div>
 			<div class="item">
 				<?php echo $this->Html->image('vilgenis3.png');?>
 				<div class="carousel-caption">
-					<h4>Third label</h4>
-					<p>Take note of the 'active' and 'slide' classes.</p>
+					
 				</div>
 			</div>
 		</div>

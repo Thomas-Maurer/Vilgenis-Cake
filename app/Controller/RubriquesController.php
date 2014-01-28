@@ -10,6 +10,7 @@ class Rubriquescontroller extends AppController {
     }
 	
 		public function display($nom_rub){
+		$nom_rub = addslashes ($nom_rub );
 		$rubrique_id = $this->rubrique->find('first',array('conditions' =>array("rubrique.NOM_RUBRIQUE = '$nom_rub'")));
 		$rubrique_id = $rubrique_id["rubrique"]["id"];
 		
