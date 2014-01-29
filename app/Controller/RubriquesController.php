@@ -14,6 +14,7 @@ class Rubriquescontroller extends AppController {
 		$rubrique_id = $this->rubrique->find('first',array('conditions' =>array("rubrique.NOM_RUBRIQUE = '$nom_rub'")));
 		$rubrique_id = $rubrique_id["rubrique"]["id"];
 		
+		$this->set('rubriqueencours',$this->rubrique->find('first',array('conditions' =>array("rubrique.NOM_RUBRIQUE = '$nom_rub'"))));
 		$this->set('articles', $this->rubrique->article->contient->find('first',array('conditions' =>array("contient.ID_RUBRIQUE = '$rubrique_id' AND article.VISIBLE_ARTICLE = 1"))));
 		$this->set('lastarticles', $this->rubrique->article->contient->find('all',array('conditions' =>array("contient.ID_RUBRIQUE = '$rubrique_id' AND article.VISIBLE_ARTICLE = 1"))));
 		$this->set('rubriques_parents', $this->rubrique->find('all',array('conditions' =>array('rubrique.ID_RUBRIQUE_PARENT IS NULL'))));

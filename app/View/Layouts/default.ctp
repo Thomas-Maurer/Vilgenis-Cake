@@ -45,8 +45,11 @@ $cakeDescription = __d('cake_dev', 'Vilgenis site web');
 	<div class="container contenuWhite">
 		<?php echo $this->element('Header'); ?>
 		<?php echo $this->element('carousel'); ?>
+		
 		<div class="contenuWhite">
-			<?php echo $this->element('menu-gauche'); ?>
+			<?php echo $this->element('menu-horizontal-sanssousrub'); ?>
+			<?php echo $this->element('menu-gauche-sousrub'); ?>
+			<?php //echo $this->element('menu-gauche'); ?>
 			<?php echo $this->Session->flash(); ?>
 			<div class="Contenu">
 			<?php echo $this->fetch('content'); ?>
